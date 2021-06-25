@@ -1,0 +1,40 @@
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(to top, #2f97fe, #00aeff, #00c0f1, #00ced6, #00d8b6, #00dda7, #00e293, #0fe67b, #11ea85, #15ed8e, #1af198, #20f4a1);
+}
+
+.navbar {
+  background-color: #2F97FE;
+  font-weight: bold;
+  font-size: 20px;
+  top: 0%;
+  
+}
+
+.navbar-brand {
+  color: white;
+  font-size: 50px;
+  text-shadow: 2px 2px 4px #000000;
+  text-decoration: none;
+  font-family: 'Londrina Shadow', cursive;
+}
+
+.nav-link {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+header nav ul li a:hover {
+  background: #10E16E;
+  border-radius: 10px;
+  text-shadow: none;
+}
+
+.motto {
+  border: 3px solid white;
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 50px;
+}
