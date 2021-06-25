@@ -27,5 +27,6 @@
     "express-session": "^1.17.2",
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.2"
-  }
+  },
+  "keywords": []
 }

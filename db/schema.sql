@@ -1,5 +1,5 @@
-DROP DATABASE IF EXISTS petcation-stationdb;
+DROP DATABASE IF EXISTS petcation_stationdb;
 
-CREATE DATABASE petcation-stationdb;
+CREATE DATABASE petcation_stationdb;
 
-USE petcation-stationdb;
+USE petcation_stationdb;
