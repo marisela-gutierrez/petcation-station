@@ -1,22 +1,22 @@
 const router = require('express').Router();
 const { userInfo } = require('os');
-const { Pet_Owners } = require('../../models');
+const { Pet_Owner, User } = require('../../models');
 
 router.get('/', (req, res) => {
-    Pet_Owners.findAll({
+    Pet_Owner.findAll({
         attributes: [
             'id',
             'hosting_preference',
             'bio',
             'socials',
             'contact'
+        ],
+        include: [
+            {
+                model: User,
+                attributes: ['first_name', 'last_name', 'email', 'phone', 'profile_pic']
+            }
         ]
-        // include: [
-        //     {
-        //         model: User,
-        //         attributes: []
-        //     }
-        // ]
     })
         .then(dbpetOwnersData => res.json(dbpetOwnersData))
         .catch(err => {
@@ -26,7 +26,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-    Pet_Owners.findOne({
+    Pet_Owner.findOne({
         where: {
             id: req.params.id
         },
@@ -36,13 +36,13 @@ router.get('/:id', (req, res) => {
             'bio',
             'socials',
             'contact'
+        ],
+        include: [
+            {
+                model: User,
+                attributes: ['first_name', 'last_name', 'email', 'phone', 'profile_pic']
+            }
         ]
-        // include: [
-        //     {
-        //         model: User,
-        //         attributes: []
-        //     }
-        // ]
     })
         .then(dbpetOwnersData => {
             if (!dbpetOwnersData) {
@@ -58,7 +58,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    Pet_Owners.create({
+    Pet_Owner.create({
         hosting_preference: req.body.hosting_preference,
         bio: req.body.bio,
         socials: req.body.socials,
@@ -72,7 +72,7 @@ router.post('/', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-    Pet_Owners.update(req.body, {
+    Pet_Owner.update(req.body, {
         where: {
             id: req.params.id
         }
@@ -91,7 +91,7 @@ router.put('/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-    Pet_Owners.destroy({
+    Pet_Owner.destroy({
         where: {
             id: req.params.id
         }

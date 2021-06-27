@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Pet_Owners extends Model { }
+class Pet_Owner extends Model { }
 
-Pet_Owners.init(
+Pet_Owner.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -27,13 +27,13 @@ Pet_Owners.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        // user_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: 'user',
-        //         key: 'id'
-        //     }
-        // }
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
+        }
     },
     {
         sequelize,
@@ -44,4 +44,4 @@ Pet_Owners.init(
     }
 )
 
-module.exports = Pet_Owners;
+module.exports = Pet_Owner;
