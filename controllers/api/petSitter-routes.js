@@ -83,4 +83,42 @@ router.post('/', (req, res) => {
         });
 });
 
+router.put('/:id', (req, res) => {
+    Pet_Sitter.update(req.body, {
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(dbpetSitterData => {
+            if (!dbpetSitterData[0]) {
+                res.status(404).json({ message: 'No Pet Sitter found with this id' });
+                return;
+            }
+            res.json(dbpetSitterData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+router.delete('/:id', (req, res) => {
+    Pet_Sitter.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(dbpetSitterData => {
+            if (!dbpetSitterData) {
+                res.status(404).json({ message: 'No Pet Sitter found with this id' });
+                return;
+            }
+            res.json(dbpetSitterData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
 module.exports = router;
