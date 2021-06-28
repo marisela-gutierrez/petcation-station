@@ -3,18 +3,23 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "seed": "node seed.js",
+
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
+
     "url": "git+https://github.com/marisela-gutierrez/petcation-station.git"
+
   },
   "author": "",
   "license": "ISC",
   "bugs": {
+
     "url": "https://github.com/marisela-gutierrez/petcation-station/issues"
   },
   "homepage": "https://github.com/marisela-gutierrez/petcation-station#readme",
