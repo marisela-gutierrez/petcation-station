@@ -7,7 +7,12 @@ async function signupFormHandler(event) {
     const phone = document.querySelector('#phone-signup').value.trim();
     const zipcode = document.querySelector('#zipcode-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
-   
+    const confirmPassword = document.querySelector('#password-confirm').value.trim();
+    let passwordMatch = false;
+    if(password == confirmPassword){
+      passwordMatch = true;
+    }
+    if(passwordMatch){
     if (first_name && last_name && email && phone && zipcode && password) {
       const response = await fetch('/api/users', {
         method: 'post',
@@ -24,6 +29,11 @@ async function signupFormHandler(event) {
   
         alert(response.statusText);
       
+    }else {
+      alert("The fields can not be empty.");
+    }
+    } else {
+      alert("The password fields didn't match.")
     }
   }
 

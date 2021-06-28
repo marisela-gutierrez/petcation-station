@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class User_pictures extends Model {}
+class Pet_pictures extends Model {}
 
 User_pictures.init (
     {
@@ -13,12 +13,12 @@ User_pictures.init (
           },
         picture_url: {
             type: DataTypes.STRING,
-            defaultValue:'https://ucarecdn.com/c14107eb-3afa-4862-a40c-52119d8cc218/no_picture.jpg',
+            defaultValue:'https://ucarecdn.com/a686ba0b-99fe-4e9d-becb-7c2bd4dd7768/mypet.jpg',
         },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'user',
+                model: 'pet',
                 key: 'id'
             }
         }
@@ -28,8 +28,8 @@ User_pictures.init (
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'userPicture'
+        modelName: 'petPicture'
     }
 );
 
-module.exports = User_pictures;
+module.exports = Pet_pictures;

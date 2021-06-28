@@ -81,6 +81,11 @@
     text-shadow: 4px 4px 7px #000000;
   }
   
+  .btn-signup {
+    margin-top: 30px;
+    width: 100%;
+  }
+
   .btn {
     border-radius: 20px;
   }

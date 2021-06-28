@@ -13,7 +13,7 @@ class User extends Model {
 // create fields/columns for User model
 User.init(
   {
-    user_id: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -47,7 +47,7 @@ User.init(
     zipcode: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true,
+        unique: false,
         validate: {
             isNumeric: true,
             len: [5]
