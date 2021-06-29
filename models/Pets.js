@@ -31,19 +31,15 @@ Pets.init(
             allowNull: false
         },
         gender: {
-            type: DataTypes.STRING,
+            type: DataTypes.BOOLEAN,
             allowNull: false
         },
         interactive: {
             type: DataTypes.BOOLEAN,
             allowNull: false
         },
-        behavior: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
         feeding_habits: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false
         },
         neutered_spayed: {
