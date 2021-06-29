@@ -15,10 +15,10 @@ Pet_picture.init (
             type: DataTypes.STRING,
             defaultValue:'https://ucarecdn.com/a686ba0b-99fe-4e9d-becb-7c2bd4dd7768/mypet.jpg',
         },
-        user_id: {
+        pet_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'pet',
+                model: 'pets',
                 key: 'id'
             }
         }

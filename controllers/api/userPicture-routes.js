@@ -25,6 +25,7 @@ router.get('/:id', (req, res) => {
 
   router.post('/', (req, res) => {
     User_picture.create({
+        user_id: req.body.user_id,
         picture_url: req.body.picture_url
     })
     .then(dbPictureData => res.json(dbPictureData))
