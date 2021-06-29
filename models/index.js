@@ -25,7 +25,6 @@ Pet_Sitter.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-
 User.hasOne(User_picture, {
     foreignKey: 'user_id'
 });

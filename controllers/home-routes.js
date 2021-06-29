@@ -8,8 +8,4 @@ router.get('/signup', (req, res) => {
     res.render('signup');
   });
 
-  router.get('/uploader', (req, res) => {
-    res.render('pictureUploader');
-  });
-
-module.exports = router; 
+module.exports = router;
