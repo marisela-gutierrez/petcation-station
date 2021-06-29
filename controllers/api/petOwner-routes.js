@@ -62,7 +62,8 @@ router.post('/', (req, res) => {
         hosting_preference: req.body.hosting_preference,
         bio: req.body.bio,
         socials: req.body.socials,
-        contact: req.body.contact
+        contact: req.body.contact,
+        user_id: req.body.user_id
     })
         .then(dbpetOwnersData => res.json(dbpetOwnersData))
         .catch(err => {
