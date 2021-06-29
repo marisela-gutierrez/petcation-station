@@ -1,0 +1,16 @@
+<article class="petDash">
+    <div>
+        <button id="addPet" type="button" class="btn btn-primary btn-outline-light">+ Pet</button>
+    </div>
+    <ul>
+        {{#each}}
+        <li>
+            {{!-- Pet mini profile Partial --}}
+            <button id="editPet" type="button" class="btn btn-primary btn-outline-light">Edit Pet</button>
+            <button id="deletePet" type="button" class="btn btn-danger btn-outline-light">Remove Pet</button>
+        </li>
+        {{/each}}
+    </ul>
+</article>
+
+<script src="/javascript/petDashboard.js"></script>
