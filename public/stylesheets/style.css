@@ -116,7 +116,8 @@ main {
 }
 
 .pet-card h5 {
-  color: #3568e2;
+  color: white;
+  background-color: #3568e2;
   font-size: 30px;
   font-family: 'Anton', sans-serif;
 }
