@@ -47,7 +47,7 @@ User.init(
     zipcode: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true,
+        unique: false,
         validate: {
             isNumeric: true,
             len: [5]
@@ -59,10 +59,6 @@ User.init(
       validate: {
         len: [8]
       }
-    },
-    profile_pic: {
-        type: DataTypes.UUID,
-        defaultValue: sequelize.UUIDV4
     }
   },
 

@@ -1,7 +1,7 @@
 * {
-  box-sizing: border-box;
-}
-
+    box-sizing: border-box;
+  }
+  
 body {
   min-height: 100vh;
   padding: 0;
@@ -82,6 +82,11 @@ main {
   text-shadow: 4px 4px 7px #000000;
 }
 
+ .btn-signup {
+    margin-top: 30px;
+    width: 100%;
+  }
+
 .btn {
   border-radius: 20px;
 }
@@ -133,3 +138,18 @@ main {
   font-family: 'Nanum Myeongjo', serif;
   font-weight: bold;
 }
+=======
+  .btn {
+    border-radius: 20px;
+  }
+  
+  .bone {
+    margin-top: 70px;
+    font-size: 50px;
+    border-top-style: solid;
+    border-color: white;
+    margin-bottom: 30px;
+    color: #3b3737;
+  
+  }
+ 
