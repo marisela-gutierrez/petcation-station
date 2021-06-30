@@ -1,3 +1,21 @@
-
+<section class="pet-card">
+  {{#each pets as |pet|}}
+  <div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{pet.pet_name}}</h5>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"> {{pet.species}} </li>
+          <li class="list-group-item"> {{pet.gender}} </li>
+          <li class="list-group-item"> {{pet.age}} </li>
+        </ul>
+      </div>
+      <a href="#" class="btn btn-primary">View Profile</a>
+    </div>
+  </div>
+  <br>
+ {{/each}}
+</section>
 
 
