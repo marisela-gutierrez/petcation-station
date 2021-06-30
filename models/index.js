@@ -1,7 +1,9 @@
 const User = require('./User');
 const Pet_Owner = require('./Pet_Owner');
 const Pet_Sitter = require('./Pet_Sitter');
-const Review = require('./Review');
+const User_picture = require('./User_picture');
+const Pets = require('./Pets');
+const Pet_picture = require('./Pet_picture');
 
 User.hasOne(Pet_Owner, {
     foreignKey: 'user_id'
@@ -9,6 +11,14 @@ User.hasOne(Pet_Owner, {
 
 Pet_Owner.belongsTo(User, {
     foreignKey: 'user_id'
+});
+
+Pet_Owner.hasMany(Pets, {
+    foreignKey: 'owner_id'
+});
+
+Pets.belongsTo(Pet_Owner, {
+    foreignKey:'owner_id'
 });
 
 User.hasOne(Pet_Sitter, {
@@ -19,32 +29,21 @@ Pet_Sitter.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-Pet_Owner.belongsToMany(Pet_Sitter, {
-    through: Review,
-    as: 'reviewed_sitter',
-    foreignKey: 'pet_owner_id'
+User.hasOne(User_picture, {
+    foreignKey: 'user_id'
 });
 
-Pet_Sitter.belongsToMany(Pet_Owner, {
-    through: Review,
-    as: 'reviewed_sitter',
-    foreignKey: 'pet_sitter_id'
-})
-
-Review.belongsTo(Pet_Owner, {
-    foreignKey: 'pet_owner_id'
+User_picture.belongsTo(User, {
+    foreignKey: 'user_id'
 });
 
-Review.belongsTo(Pet_Sitter, {
-    foreignKey: 'pet_sitter_id'
+Pets.hasOne(Pet_picture, {
+    foreignKey: 'pet_id'
 });
 
-Pet_Owner.hasMany(Review, {
-    foreignKey: 'pet_owner_id'
+Pet_picture.belongsTo(Pets, {
+    foreignKey: 'pet_id'
 });
 
-Pet_Sitter.hasMany(Review, {
-    foreignKey: 'pet_sitter_id'
-});
 
-module.exports = { User, Pet_Owner, Pet_Sitter, Review };
+module.exports = { User, Pet_Owner, Pet_Sitter, Pets};
