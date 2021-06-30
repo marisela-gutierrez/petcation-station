@@ -2,7 +2,7 @@ const User = require('./User');
 const Pet_Owner = require('./Pet_Owner');
 const Pet_Sitter = require('./Pet_Sitter');
 const User_picture = require('./User_picture');
-const Pet = require('./Pet');
+const Pets = require('./Pets');
 const Pet_picture = require('./Pet_picture');
 
 User.hasOne(Pet_Owner, {
@@ -13,8 +13,12 @@ Pet_Owner.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-Pet_Owner.hasMany(Pet, {
-    foreignKey: 'user_id'
+Pet_Owner.hasMany(Pets, {
+    foreignKey: 'owner_id'
+});
+
+Pets.belongsTo(Pet_Owner, {
+    foreignKey:'owner_id'
 });
 
 User.hasOne(Pet_Sitter, {
@@ -33,13 +37,13 @@ User_picture.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-Pet.hasOne(Pet_picture, {
+Pets.hasOne(Pet_picture, {
     foreignKey: 'pet_id'
 });
 
-Pet_picture.belongsTo(Pet, {
+Pet_picture.belongsTo(Pets, {
     foreignKey: 'pet_id'
 });
 
 
-module.exports = { User, Pet_Owner, Pet_Sitter, Pet};
+module.exports = { User, Pet_Owner, Pet_Sitter, Pets};
