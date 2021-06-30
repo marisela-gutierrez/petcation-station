@@ -18,7 +18,7 @@ const sess = {
         db: sequelize
     })
 };
-
+app.use(session(sess));
 const hbs = exphbs.create({ helpers });
 app.use(express.static(path.join(__dirname, 'public')));
 app.engine('handlebars', hbs.engine);
