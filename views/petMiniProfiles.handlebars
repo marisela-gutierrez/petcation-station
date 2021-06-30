@@ -1,0 +1,21 @@
+<section class="pet-card row ">
+  <h1>Pets to care for <i class="far fa-heart"></i> </h1>
+  {{#each pets as |pet|}}
+  <div class=" col-sm-3 mb-5 ">
+    <div class="card" style="width: 18rem;">
+    <img src="https://ucarecdn.com/60ac9bb2-cc23-4052-b03b-2686a9578cb3/mypet.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title text-center">{{pet.pet_name}}</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Animal: {{pet.species}}</li>
+      <li class="list-group-item">Gender: {{pet.gender}}</li>
+      <li class="list-group-item">Age: {{pet.age}}</li>
+    </ul>
+   <a href="#" class="btn btn-primary">View Profile</a>
+  </div>
+ </div> 
+ {{/each}}
+</section>
+
+

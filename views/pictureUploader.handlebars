@@ -1,0 +1,27 @@
+
+
+<div class="motto d-flex justify-content-center">
+    <img src="https://ucarecdn.com/c14107eb-3afa-4862-a40c-52119d8cc218/no_picture.jpg" class="rounded float-left" alt="">  <input
+  type="hidden"
+  role="uploadcare-uploader"
+  data-image-shrink="1024x1024 70%" />
+</div>
+    
+
+<script>
+  UPLOADCARE_PUBLIC_KEY = '59150aeae4413033069f';
+  UPLOADCARE_EFFECTS = 'crop,rotate,mirror,flip,enhance,sharp,blur,grayscale,invert';
+  UPLOADCARE_IMAGE_SHRINK = '1024x1024 70%';
+  UPLOADCARE_PREVIEW_STEP = true;
+  UPLOADCARE_CLEARABLE = true;
+  UPLOADCARE_LOCALE = 'en';
+  UPLOADCARE_LIVE = false;
+</script>
+
+<script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js" charset="utf-8"></script>
+<script src="https://ucarecdn.com/libs/widget-tab-effects/1.x/uploadcare.tab-effects.js"></script>
+
+<script>
+  uploadcare.registerTab('preview', uploadcareTabEffects)
+</script>
+<script src="javascript/pictureUpload.js"></script>

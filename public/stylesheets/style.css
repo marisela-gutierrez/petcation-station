@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+  }
+  
+body {
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  color: white;
+  background-image: linear-gradient(to left top, #3b6bf2, #3568e2, #3165d2, #3061c2, #305db2, #3264b3, #366bb4, #3c71b5, #4585c7, #4f98d8, #5cade9, #6ac1f9);
+}
+
+header {
+  margin-bottom: 10px;
+}
+.navbar {
+  background-color: #3061c2;
+  font-weight: bold;
+  font-size: 20px;
+  top: 0%;
+  border-bottom: 2px solid white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  color: white;
+  font-size: 50px;
+  text-shadow: 2px 2px 4px #000000;
+  text-decoration: none;
+  font-family: 'Londrina Shadow', cursive;
+  margin-right: 70px;
+}
+
+.nav-link {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+header nav ul li a:hover {
+  background: white;
+  border-radius: 10px;
+  text-shadow: none;
+}
+
+main {
+  flex: 1;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.motto {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 30px;
+  padding-top: 100px;
+}
+
+.motto h1 {
+  font-family: 'Shadows Into Light', cursive;
+  color: white;
+  font-weight: bold;
+  font-size: 70px;
+  text-shadow: 4px 4px 7px #000000;
+  margin-bottom: 30px;
+}
+
+.icon {
+  margin-bottom: 30px;
+  font-size: 70px;
+  text-shadow: 4px 4px 7px #000000;
+}
+
+ .btn-signup {
+    margin-top: 30px;
+    width: 100%;
+  }
+
+.btn {
+  border-radius: 20px;
+}
+
+.bone {
+  margin-top: 70px;
+  font-size: 50px;
+  border-top-style: solid;
+  border-color: white;
+  margin-bottom: 30px;
+  color: #3b3737;
+
+}
+
+.about {
+  font-size: 70px;
+  margin-bottom: 40px;
+}
+
+.about h3 {
+  font-size: 45px;
+  font-weight: bold;
+  font-family: 'Nanum Myeongjo', serif;
+}
+.about p {
+  font-size: 30px;
+  font-family: 'Nanum Myeongjo', serif;
+}
+
+.pet-card {
+  margin-top: 100px;
+  margin-bottom: 80px;
+}
+
+.pet-card h1{
+  font-family: 'Anton', sans-serif;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.pet-card h5 {
+  color: white;
+  background-color: #3568e2;
+  font-size: 30px;
+  font-family: 'Anton', sans-serif;
+}
+
+.pet-card ul li {
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: bold;
+}
+
+ 

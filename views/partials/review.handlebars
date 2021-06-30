@@ -1,0 +1,13 @@
+<div class="reviews">
+  {{#each user.reviews}}
+  <section class="review">
+    <div>
+      {{user.first_name}} {{user.last_name}} on {{created_at}}
+    </div>
+    <div class="text">
+      <h4>{{title}}</h4> 
+      {{text}}
+    </div>
+  </section>
+  {{/each}}
+</div>
