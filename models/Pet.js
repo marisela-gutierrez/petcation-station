@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Pets extends Model { }
+class Pet extends Model { }
 
-Pets.init(
+Pet.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -31,19 +31,15 @@ Pets.init(
             allowNull: false
         },
         gender: {
-            type: DataTypes.STRING,
+            type: DataTypes.BOOLEAN,
             allowNull: false
         },
         interactive: {
             type: DataTypes.BOOLEAN,
             allowNull: false
         },
-        behavior: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
         feeding_habits: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false
         },
         neutered_spayed: {
@@ -71,4 +67,4 @@ Pets.init(
     }
 );
 
-module.exports = Pets;
+module.exports = Pet;
