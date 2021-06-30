@@ -102,17 +102,24 @@ main {
 }
 
 .about h3 {
-  font-size: 40px;
+  font-size: 45px;
   font-weight: bold;
   font-family: 'Nanum Myeongjo', serif;
 }
 .about p {
   font-size: 30px;
+  font-family: 'Nanum Myeongjo', serif;
 }
 
 .pet-card {
   margin-top: 100px;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
+}
+
+.pet-card h1{
+  font-family: 'Anton', sans-serif;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .pet-card h5 {
