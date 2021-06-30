@@ -6,4 +6,12 @@ const withAuth = (req, res, next) => {
     }
 };
 
-module.exports = withAuth;
+const petOwnerAuth = (req, res, next) => {
+    if (!req.session.petOwnerId) {
+        res.redirect('/dashboard');
+    } else {
+        next();
+    }
+};
+
+module.exports = { withAuth, petOwnerAuth };

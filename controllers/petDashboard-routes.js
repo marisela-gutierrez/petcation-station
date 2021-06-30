@@ -1,10 +1,13 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const withAuth = require('../utils/auth');
-const { User, Pet_Owner, Pet_Sitter, Pet, Pet_picture, User_picture, Review } = require('../models');
+const {withAuth, petOwnerAuth} = require('../utils/auth');
+const { User, Pet_Owner, Pet_Sitter, Pets, Pet_picture, User_picture, Review } = require('../models');
 
-router.get('/', withAuth, (req, res) => {
-    Pet.findAll({
+router.get('/', petOwnerAuth, (req, res) => {
+    Pets.findAll({
+        where: {
+            owner_id: req.session.Pet_Owner
+        },
         attributes: [
             'pet_name',
             'species',
@@ -14,7 +17,7 @@ router.get('/', withAuth, (req, res) => {
     })
         .then(dbPetData => {
             const pet = dbPetData.map(post => post.get({ plain: true }));
-            console.log(pet);
+            console.log(req.session);
             res.render('pet-dashboard', { pet });
         })
         .catch(err => {
