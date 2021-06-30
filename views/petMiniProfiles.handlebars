@@ -1,20 +1,20 @@
-<section class="pet-card">
+<section class="pet-card row ">
   {{#each pets as |pet|}}
-  <div class="card" style="width: 18rem;">
+  <div class=" col-sm-3 mb-5 ">
+    <div class="card" style="width: 18rem;">
     <img src="..." class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">{{pet.pet_name}}</h5>
-      <div class="card-body">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"> {{pet.species}} </li>
-          <li class="list-group-item"> {{pet.gender}} </li>
-          <li class="list-group-item"> {{pet.age}} </li>
-        </ul>
-      </div>
-      <a href="#" class="btn btn-primary">View Profile</a>
+      <h5 class="card-title text-center">{{pet.pet_name}}</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Animal: {{pet.species}}</li>
+      <li class="list-group-item">Gender: {{pet.gender}}</li>
+      <li class="list-group-item">Age: {{pet.age}}</li>
+    </ul>
+   <a href="#" class="btn btn-primary">View Profile</a>
   </div>
-  <br>
+ </div> 
  {{/each}}
 </section>
 

@@ -30,6 +30,7 @@ header {
   text-shadow: 2px 2px 4px #000000;
   text-decoration: none;
   font-family: 'Londrina Shadow', cursive;
+  margin-right: 70px;
 }
 
 .nav-link {
@@ -111,4 +112,16 @@ main {
 
 .pet-card {
   margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.pet-card h5 {
+  color: #3568e2;
+  font-size: 30px;
+  font-family: 'Anton', sans-serif;
+}
+
+.pet-card ul li {
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: bold;
 }
