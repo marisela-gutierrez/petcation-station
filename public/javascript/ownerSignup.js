@@ -20,7 +20,7 @@ async function ownerSignupFormHandler(event) {
         });
 
         alert(response.statusText);
-
+        document.location.replace('/dashboard');
     } else {
         alert("The fields can not be empty.");
     }
