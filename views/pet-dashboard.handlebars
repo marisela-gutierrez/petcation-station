@@ -1,16 +1,27 @@
-<article class="petDash">
-    <div>
+<article class="petDash mt-5 pt-5">
+    <div class="mb-3">
         <button id="addPet" type="button" class="btn btn-primary btn-outline-light">+ Pet</button>
     </div>
-    <ul>
-        {{#each}}
-        <li>
-            {{!-- Pet mini profile Partial --}}
-            <button id="editPet" type="button" class="btn btn-primary btn-outline-light">Edit Pet</button>
-            <button id="deletePet" type="button" class="btn btn-danger btn-outline-light">Remove Pet</button>
-        </li>
-        {{/each}}
-    </ul>
+    <div class="container">
+        <div class="row">
+            {{#each pet}} <div class=" col-sm-3 m-5 row">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://ucarecdn.com/60ac9bb2-cc23-4052-b03b-2686a9578cb3/mypet.jpg" class="card-img-top"
+                        alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-center text-primary">{{pet_name}}</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Animal: {{species}}</li>
+                        <li class="list-group-item">Gender: {{gender}}</li>
+                        <li class="list-group-item">Age: {{age}}</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">View Profile</a>
+                    <button id="editPet" type="button" class="btn btn-primary btn-outline-light">Edit Pet</button>
+                    <button id="deletePet" type="button" class="btn btn-danger btn-outline-light">Remove Pet</button>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
 </article>
-
-<script src="/javascript/petDashboard.js"></script>

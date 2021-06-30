@@ -4,6 +4,7 @@ const Pet_Sitter = require('./Pet_Sitter');
 const User_picture = require('./User_picture');
 const Pets = require('./Pets');
 const Pet_picture = require('./Pet_picture');
+const Review = require('./Review');
 
 User.hasOne(Pet_Owner, {
     foreignKey: 'user_id'
@@ -46,4 +47,4 @@ Pet_picture.belongsTo(Pets, {
 });
 
 
-module.exports = { User, Pet_Owner, Pet_Sitter, Pets};
+module.exports = { User, Pet_Owner, Pet_Sitter, Pets, Pet_picture, User_picture, Review };

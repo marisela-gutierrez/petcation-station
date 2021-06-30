@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const { Pets, Pet_Owner, User } = require('../../models');
+const { Pet, Pet_Owner, User } = require('../../models');
 
 router.get('/', (req, res) => {
-    Pets.findAll({
+    Pet.findAll({
         attributes: [
             'id',
             'pet_name',
@@ -37,7 +37,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-    Pets.findOne({
+    Pet.findOne({
         where: {
             id: req.params.id
         },
@@ -81,7 +81,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    Pets.create({
+    Pet.create({
         pet_name: req.body.pet_name,
         age: req.body.age,
         species: req.body.species,
@@ -102,7 +102,7 @@ router.post('/', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-    Pets.update(req.body, {
+    Pet.update(req.body, {
         where: {
             id: req.params.id
         }
@@ -121,7 +121,7 @@ router.put('/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-    Pets.destroy({
+    Pet.destroy({
         where: {
             id: req.params.id
         }
