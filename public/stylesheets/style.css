@@ -108,3 +108,7 @@ main {
 .about p {
   font-size: 30px;
 }
+
+.pet-card {
+  margin-top: 100px;
+}
