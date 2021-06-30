@@ -63,9 +63,21 @@ router.post('/', (req, res) => {
         bio: req.body.bio,
         socials: req.body.socials,
         contact: req.body.contact,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
-        .then(dbpetOwnersData => res.json(dbpetOwnersData))
+        .then(dbpetOwnersData => {
+            req.session.save(() => {
+                req.session.user_id = req.session.user_id;
+                req.session.username = req.session.username;
+                req.session.loggedIn = req.session.loggedIn;
+                req.session.petOwnerId = dbpetOwnersData.petOwner.id;
+                if (req.session.petSitterId) {
+                    req.session.petSitterId = req.session.petSitterId;
+                }
+            })
+            
+            res.json(dbpetOwnersData)
+        })
         .catch(err => {
             console.log(err);
             res.status(400).json(err);
