@@ -7,8 +7,8 @@ const petPicturesRoutes = require('./petPicture-routes');
 const reviewRoutes = require('./review-routes');
 const petRoutes = require('./pet-routes');
 
-router.use('/userPicture', userPicturesRoutes);
 router.use('/users', userRoutes);
+router.use('/userPicture', userPicturesRoutes);
 router.use('/petPicture', petPicturesRoutes);
 router.use('/petOwners', petOwnerRoutes);
 router.use('/petSitters', petSitteroutes);
