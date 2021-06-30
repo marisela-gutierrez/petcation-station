@@ -8,7 +8,7 @@ async function ownerSignupFormHandler(event) {
 
 
     if (hosting_preference && bio && socials && contact) {
-        const response = await fetch('/api/users', {
+        const response = await fetch('/api/petOwners', {
             method: 'post',
             body: JSON.stringify({
                 hosting_preference,

@@ -8,6 +8,7 @@ const withAuth = (req, res, next) => {
 
 const petOwnerAuth = (req, res, next) => {
     if (!req.session.petOwnerId) {
+        console.log(req.session);
         res.redirect('/dashboard');
     } else {
         next();

@@ -66,16 +66,8 @@ router.post('/', (req, res) => {
         user_id: req.session.user_id
     })
         .then(dbpetOwnersData => {
-            req.session.save(() => {
-                req.session.user_id = req.session.user_id;
-                req.session.username = req.session.username;
-                req.session.loggedIn = req.session.loggedIn;
-                req.session.petOwnerId = dbpetOwnersData.petOwner.id;
-                if (req.session.petSitterId) {
-                    req.session.petSitterId = req.session.petSitterId;
-                }
-            })
-            
+            req.session.petOwnerId = dbpetOwnersData.id;
+            console.log(dbpetOwnersData.id);
             res.json(dbpetOwnersData)
         })
         .catch(err => {
