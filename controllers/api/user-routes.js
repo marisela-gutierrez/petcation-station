@@ -116,12 +116,12 @@ router.post('/login', (req, res) => {
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
       req.session.loggedIn = true;
-      if (dbUserData.petOwner.id) {
-        req.session.petOwnerId = dbUserData.petOwner.id;
-      }
-      if (dbUserData.petSitter) {
-        req.session.petSitterId = dbUserData.petSitter.id;
-      }
+      // if (dbUserData.petOwner.id) {
+      //   req.session.petOwnerId = dbUserData.petOwner.id;
+      // }
+      // if (dbUserData.petSitter) {
+      //   req.session.petSitterId = dbUserData.petSitter.id;
+      // }
 
       res.json({ user: dbUserData, message: 'You are now logged in!' });
     });
