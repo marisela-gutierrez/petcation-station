@@ -102,7 +102,7 @@ router.post('/', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-    Pets.update(req.body, {
+    Pet.update(req.body, {
         where: {
             id: req.params.id
         }

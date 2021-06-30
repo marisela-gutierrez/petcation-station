@@ -63,9 +63,12 @@ router.post('/', (req, res) => {
         bio: req.body.bio,
         socials: req.body.socials,
         contact: req.body.contact,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
-        .then(dbpetOwnersData => res.json(dbpetOwnersData))
+        .then(dbpetOwnersData => {
+            req.session.petOwnerId = dbpetOwnersData.id;
+            res.json(dbpetOwnersData)
+        })
         .catch(err => {
             console.log(err);
             res.status(400).json(err);

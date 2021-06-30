@@ -1,40 +1,40 @@
 const router = require('express').Router();
-const {User} = require('../../models');
+const { User } = require('../../models');
 const User_picture = require('../../models/User_picture');
 
 // get all users
 router.get('/', (req, res) => {
-    User.findAll({
-      attributes: { exclude: ['password'] },
-      include: [
-        {
-          model: User_picture,
-          attributes: ['picture_url', 'id']
-        }
-      ]
-    })
-      .then(dbUserData => res.json(dbUserData))
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-  });
-
-  //Get one user
-  router.get('/:id', (req, res) => {
-    User.findOne({
-      attributes: { exclude: ['password'] },
-      where: {
-        id: req.params.id
-      },
-      include: [
-        {
-          model: User_picture,
-          attributes: ['picture_url']
-        }
-      ]
+  User.findAll({
+    attributes: { exclude: ['password'] },
+    include: [
+      {
+        model: User_picture,
+        attributes: ['picture_url', 'id']
+      }
+    ]
+  })
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     });
+});
+
+//Get one user
+router.get('/:id', (req, res) => {
+  User.findOne({
+    attributes: { exclude: ['password'] },
+    where: {
+      id: req.params.id
+    },
+    include: [
+      {
+        model: User_picture,
+        attributes: ['picture_url']
+      }
+    ]
   });
+});
 
 // get all users
 router.get('/', (req, res) => {
@@ -115,16 +115,21 @@ router.post('/login', (req, res) => {
 
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
-      req.session.username = dbUserData.username;
       req.session.loggedIn = true;
-  
+      if (dbUserData.petOwner.id) {
+        req.session.petOwnerId = dbUserData.petOwner.id;
+      }
+      if (dbUserData.petSitter) {
+        req.session.petSitterId = dbUserData.petSitter.id;
+      }
+
       res.json({ user: dbUserData, message: 'You are now logged in!' });
     });
   })
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  });
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 router.post('/logout', (req, res) => {
