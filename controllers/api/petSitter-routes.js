@@ -75,9 +75,12 @@ router.post('/', (req, res) => {
         price_per_day: req.body.price_per_day,
         neutering: req.body.neutering,
         availability: req.body.availability,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
-        .then(dbpetSitterData => res.json(dbpetSitterData))
+        .then(dbpetSitterData => {
+            req.session.petSitterId = dbpetSitterData.id;
+            res.json(dbpetSitterData)
+        })
         .catch(err => {
             console.log(err);
             res.status(400).json(err);

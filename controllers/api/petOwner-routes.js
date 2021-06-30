@@ -67,7 +67,6 @@ router.post('/', (req, res) => {
     })
         .then(dbpetOwnersData => {
             req.session.petOwnerId = dbpetOwnersData.id;
-            console.log(dbpetOwnersData.id);
             res.json(dbpetOwnersData)
         })
         .catch(err => {
