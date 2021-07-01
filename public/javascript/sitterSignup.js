@@ -8,7 +8,7 @@ async function sitterSignupFormHandler(event) {
     const pet_skills = document.querySelector('#petSkills-signup').value.trim();
     const price_per_day = document.querySelector('#price-signup').value.trim();
     const availability = document.querySelector('#availability-signup').value.trim();
-    const neutered = document.querySelector('#meutered-signup');
+    const neutered = document.querySelector('#meutered-signup').value;
 
     if (neutered === 'true') {
         neutering = true;
