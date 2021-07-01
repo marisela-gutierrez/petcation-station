@@ -7,6 +7,7 @@ async function addPetFormHandler(event) {
     const bio = document.querySelector('#bio-pet').value.trim();
     const breed = document.querySelector('#breed-pet').value.trim();
     const feeding_habits = document.querySelector('#feeding-pet').value.trim();
+
     const genderChoice = document.getElementsByName('gender');
     const interactive = document.querySelector('#interactive-pet').checked;
     const neutered_spayed = document.querySelector('#meutered-pet').checked;
@@ -23,8 +24,8 @@ async function addPetFormHandler(event) {
         gender = false;
     }
 
-    if (hosting_preference && bio && socials && contact) {
-        const response = await fetch('/api/petOwners', {
+    if (pet_name && age && species && bio && breed && feeding_habits) {
+        const response = await fetch('/api/pets', {
             method: 'post',
             body: JSON.stringify({
                 pet_name,
@@ -42,7 +43,7 @@ async function addPetFormHandler(event) {
         });
 
         alert(response.statusText);
-        document.location.replace('/dashboard');
+        document.location.replace('/petDashboard');
     } else {
         alert("The fields can not be empty.");
     }
