@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const { Pet, Pet_Owner, User } = require('../models');
+const { Pets, Pet_Owner, User } = require('../models');
 
 router.get('/', (req, res) => {
-    Pet.findAll({
+    Pets.findAll({
         attributes: [
             'id',
             'pet_name',
