@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
         include: [
             {
                 model: User,
-                attributes: ['first_name', 'last_name', 'email', 'phone', 'profile_pic']
+                attributes: ['first_name', 'last_name', 'email', 'phone']
             }
         ]
     })
