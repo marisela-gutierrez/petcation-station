@@ -29,20 +29,20 @@
             </div>
             <div class="form-group">
                 Gender:
-                <input type="radio" name="gender" value="Male">Male
-                <input type="radio" name="gender" value="Female">Female
+                <input type="radio" name="gender" value="Male" {{#unless gender}} checked {{/unless}}>Male
+                <input type="radio" name="gender" value="Female" {{#if gender}} checked {{/if}}>Female
             </div>
             <div class="form-group">
                 <label for="interactive-pet">Interactive </label>
-                <input type="checkbox" id="interactive-pet" value="true">
+                <input type="checkbox" id="interactive-pet" value="true" {{#if interactive}} checked {{/if}}>
             </div>
             <div class="form-group">
                 <label for="meutered-pet">Neutered</label>
-                <input type="checkbox" id="meutered-pet" value="true">
+                <input type="checkbox" id="meutered-pet" value="true" {{#if neutered_spayed}} checked {{/if}}>
             </div>
             <div class="form-group">
                 <label for="pottyTrained-pet">Potty Trained</label>
-                <input type="checkbox" id="pottyTrained-pet" value="true">
+                <input type="checkbox" id="pottyTrained-pet" value="true" {{#if potty_trained}} checked {{/if}}>
             </div>
             <button type="submit" class="btn btn-info btn-lg btn-block btn-signup">Submit</button>
         </form>
