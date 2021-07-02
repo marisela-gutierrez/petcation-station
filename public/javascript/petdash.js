@@ -4,14 +4,11 @@ async function addpethandler(event) {
     document.location.replace('/addpet');
 }
 
-async function editPetHandler(event) {
-    event.preventDefault();
-
-    // document.location.replace('/');
+async function editPetHandler(id) {
+    document.location.replace(`/editpet/${id}`);
 }
 
 async function deletePetHandler(id) {
-
     const response = await fetch(`/api/pets/${id}`, {
         method: 'DELETE'
     });
@@ -24,5 +21,4 @@ async function deletePetHandler(id) {
 }
 
 
-document.querySelector('#editPet').addEventListener('click', editPetHandler);
 document.querySelector('#addPet').addEventListener('click', addpethandler);

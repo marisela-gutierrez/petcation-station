@@ -14,11 +14,14 @@
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Animal: {{species}}</li>
-                        <li class="list-group-item">Gender: {{gender}}</li>
+                        <li class="list-group-item">Gender: {{#if gender}}Female{{else}}Male{{/if}}</li>
                         <li class="list-group-item">Age: {{age}}</li>
                     </ul>
                     <a href="#" class="btn btn-primary">View Profile</a>
-                    <button id="editPet" type="button" class="btn btn-primary btn-outline-light">Edit Pet</button>
+                    <button id="editPet" type="button" class="btn btn-primary btn-outline-light"
+                        onclick="editPetHandler({{id}})">
+                        Edit Pet
+                    </button>
                     <button id="deletePet" type="button" class="btn btn-danger btn-outline-light"
                         onclick="deletePetHandler({{id}})">
                         Remove Pet
