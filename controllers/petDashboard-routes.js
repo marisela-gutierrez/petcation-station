@@ -9,6 +9,7 @@ router.get('/', petOwnerAuth, (req, res) => {
             owner_id: req.session.petOwnerId
         },
         attributes: [
+            'id',
             'pet_name',
             'species',
             'gender',
