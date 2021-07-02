@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Pet_Owner, Pet_Sitter } = require('../../models');
 const User_picture = require('../../models/User_picture');
 
 // get all users
@@ -99,7 +99,17 @@ router.post('/signup', (req, res) => {
   User.findOne({
     where: {
       email: req.body.email
-    }
+    },
+    include: [
+      {
+        model: Pet_Owner,
+        attributes: ['id']
+      },
+      {
+        model: Pet_Sitter,
+        attributes: ['id']
+      }
+    ]
   }).then(dbUserData => {
     if (!dbUserData) {
       res.status(400).json({ message: 'No user with that email address!' });
@@ -116,12 +126,12 @@ router.post('/signup', (req, res) => {
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
       req.session.loggedIn = true;
-      // if (dbUserData.petOwner.id) {
-      //   req.session.petOwnerId = dbUserData.petOwner.id;
-      // }
-      // if (dbUserData.petSitter) {
-      //   req.session.petSitterId = dbUserData.petSitter.id;
-      // }
+      if (dbUserData.petOwner) {
+        req.session.petOwnerId = dbUserData.petOwner.id;
+      }
+      if (dbUserData.petSitter) {
+        req.session.petSitterId = dbUserData.petSitter.id;
+      }
 
       res.json({ user: dbUserData, message: 'You are now logged in!' });
     });

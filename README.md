@@ -15,4 +15,8 @@ The purpose of this application is to allow pet owners to easily and securely fi
 
 Screenshot of website: 
 
+![Petcation Station](https://user-images.githubusercontent.com/77582349/124045785-08df1b00-d9d6-11eb-995a-475c63496cda.png)
+
 Link to deployed application: 
+
+[Petcation Station](https://petcation-station.herokuapp.com/)

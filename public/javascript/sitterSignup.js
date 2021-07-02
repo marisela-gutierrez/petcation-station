@@ -8,16 +8,10 @@ async function sitterSignupFormHandler(event) {
     const pet_skills = document.querySelector('#petSkills-signup').value.trim();
     const price_per_day = document.querySelector('#price-signup').value.trim();
     const availability = document.querySelector('#availability-signup').value.trim();
-    const neutered = document.querySelector('#meutered-signup');
-
-    if (neutered === 'true') {
-        neutering = true;
-    } else {
-        neutering = false;
-    }
+    const neutering = document.querySelector('#meutered-signup').checked;
 
     if (hosting_preference && bio && socials && contact && pet_skills && price_per_day && availability) {
-        const response = await fetch('/api/petSitterss', {
+        const response = await fetch('/api/petSitters', {
             method: 'post',
             body: JSON.stringify({
                 hosting_preference,
