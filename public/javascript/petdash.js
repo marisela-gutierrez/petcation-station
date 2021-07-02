@@ -7,7 +7,7 @@ async function addpethandler(event) {
 async function editPetHandler(event) {
     event.preventDefault();
 
-    document.location.replace('/addpet');
+    // document.location.replace('/');
 }
 
 async function deletePetHandler(id) {
