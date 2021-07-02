@@ -4,7 +4,10 @@ const { User } = require('../models');
 const { withAuth, petOwnerAuth } = require('../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
-  res.render('dashboard', { loggedIn: true });
+  console.log(req.session);
+  res.render('dashboard', {loggedIn: true, user_id: req.session.user_id});
 });
+
+
 
 module.exports = router;
