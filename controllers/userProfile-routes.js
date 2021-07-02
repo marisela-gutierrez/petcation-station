@@ -59,7 +59,8 @@ router.get('/:id', (req, res) => {
     }).then(dbUser => {
         // pass a single pet object into the homepage template
         const user = dbUser.get({ plain: true });
-        res.render('userProfile', { user });
+        console.log(user);
+        res.render('userProfile', {user});
       })
       .catch(err => {
           console.log(err);

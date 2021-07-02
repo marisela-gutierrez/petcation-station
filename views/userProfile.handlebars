@@ -16,20 +16,29 @@
             <input class="align-center" type="hidden" role="uploadcare-uploader" data-image-shrink="1024x1024 70%" />
             
        </div>
-         <div class="col text-right">
-             <p class="lead text-primary"><strong>{{user.first_name}} {{user.last_name}}'s Profile</strong></p>
+         <div id="user-info" class="col text-right">
+             <p class="lead text-primary"><strong>{{user.first_name}} {{user.last_name}}</strong></p>
              <p class="lead"><strong>email:</strong> {{user.email}}</p>
              <p class="lead"><strong>Phone number:</strong> {{user.phone}}</p>
              <p class="lead"><strong>Zipcode:</strong> {{user.zipcode}}</p>
          </div>
          <div class="col">
-             <a class="btn btn-primary btn-lg" href="#" role="button">Edit this profile</a>
+             <button id="editProfile" type="button" class="d-block btn btn-primary btn-outline-light">Edit my profile</button>
+              <button id="deleteAccount" type="button" class="d-block mt-3 btn btn-danger btn-outline-light">Delete account</button>
          </div>
          <hr class="my-4">
          <p>What do you want to do today?.</p>
          <p class="lead">
-        <a class="btn btn-primary btn-lg" href="#" role="button">See my Pet Owner Profile</a>
+        {{#if user.petSitter}}
         <a class="btn btn-primary btn-lg" href="#" role="button">See my Pet Sitter Profile</a>
+        {{else}}
+        <a class="btn btn-primary btn-lg" href="sitterSignup" role="button">Create my Pet Sitter Profile</a>
+        {{/if}}
+        {{#if user.petOwner}}
+        <a class="btn btn-primary btn-lg" href="#" role="button">See my Pet Owner Profile</a>
+        {{else}}
+        <a class="btn btn-primary btn-lg" href="ownerSignup" role="button">Create my Pet Owner Profile</a>
+        {{/if}}
     
          </p>
    </div>
@@ -50,3 +59,4 @@
   uploadcare.registerTab('preview', uploadcareTabEffects)
 </script>
 <script src="/javascript/pictureUpload.js"></script>
+<script src="/javascript/userProfile.js"></script>

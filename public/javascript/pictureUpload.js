@@ -2,7 +2,7 @@
 const widget = uploadcare.SingleWidget("[role=uploadcare-uploader]");
 widget.onUploadComplete(fileInfo => {
   // get a CDN URL from the file info
-  let img = document.querySelector('img');
+  let img = document.querySelector("img");
   console.log(img);
   const pic_url = fileInfo.cdnUrl;
   console.log(pic_url);
