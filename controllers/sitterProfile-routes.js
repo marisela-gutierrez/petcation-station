@@ -32,7 +32,7 @@ router.get('/', (req, res) => {
       })
 });
 
-router.get('/:id', (req, res) => {
+router.get('/petSitters/:id', (req, res) => {
     Pet_Sitter.findOne({
         where: {
             id: req.params.id

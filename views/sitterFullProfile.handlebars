@@ -1,0 +1,23 @@
+<section class="pet-card  ">
+  <h1>About Me <i class="fas fa-paw"></i></i> </h1>
+
+  <div class="col-sm-3 mb-5">
+    <div class="card" style="width: 30rem;">
+    <img src="https://ucarecdn.com/60ac9bb2-cc23-4052-b03b-2686a9578cb3/mypet.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title text-center">{{user.first_name}} {{user.last_name}}</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><i class="fas fa-dollar-sign"></i> Price Per Day: $ {{sitter.price_per_day}}</li>
+      <li class="list-group-item"><i class="far fa-calendar-alt"></i> Availability: {{sitter.availability}}</li>
+      <li class="list-group-item"><i class="fas fa-address-card"></i> Bio: {{sitter.bio}}</li>
+      <li class="list-group-item"><i class="fas fa-users"></i> Social Media: {{sitter.social}}</li>
+      <li class="list-group-item"><i class="fas fa-envelope-open-text"></i> Contact: {{sitter.contact}}</li>
+      <li class="list-group-item"><i class="fas fa-home"></i> Hosting Preference: {{sitter.hosting_preference}}</li>
+      <li class="list-group-item"><i class="far fa-lightbulb"></i> Pet Skills: {{sitter.pet_skills}}</li>
+      <li class="list-group-item">Neutering {{sitter.neutering}}</li>
+    </ul>
+  </div>
+ </div> 
+ 
+</section>
