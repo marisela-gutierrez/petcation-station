@@ -80,7 +80,10 @@ router.get('/pets/:id', (req, res) => {
             const pet = dbPets.get({ plain: true });
 
             // pass data to template
-            res.render('petFullProfile', {pet});
+            res.render('petFullProfile', {
+                pet,
+                loggedIn: req.session.loggedIn
+            });
         })
         .catch(err => {
             console.log(err);

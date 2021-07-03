@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Pet_Sitter } = require('../models');
 
+
 router.get('/', (req, res) => {
   Pet_Sitter.findAll({
       attributes: [
@@ -64,7 +65,10 @@ router.get('/petSitters/:id', (req, res) => {
             const sitter = dbpetSitterData.get({ plain: true });
 
             // pass data to template
-            res.render('sitterFullProfile', {sitter});
+            res.render('sitterFullProfile', {
+                sitter,
+                loggedIn: req.session.loggedIn
+            });
         })
         .catch(err => {
             console.log(err);
