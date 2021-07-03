@@ -92,7 +92,7 @@ router.post('/', (req, res) => {
         feeding_habits: req.body.feeding_habits,
         neutered_spayed: req.body.neutered_spayed,
         potty_trained: req.body.potty_trained,
-        owner_id: req.body.owner_id
+        owner_id: req.session.petOwnerId
     })
         .then(dbPets => res.json(dbPets))
         .catch(err => {

@@ -1,0 +1,62 @@
+<section class="motto">
+
+ <div class="jumbotron bg-light rounded text-dark p-4">
+   <div class="row">
+       <div class="col-3">
+           <figure class="figure">
+             {{#if user.userPicture.picture_url}}
+             <img src={{user.userPicture.picture_url}} class="figure-img img-fluid rounded" alt="User's picture">
+              <figcaption class="figure-caption text-center">{{user.first_name}} you look great!</figcaption>
+             {{else}}
+             <img src="https://ucarecdn.com/dd30c25b-ead9-49b3-b743-c142eaacd095/no_picture.jpg" class="figure-img img-fluid rounded" alt="User's picture">
+              <figcaption class="figure-caption text-center">{{user.first_name}} upload a picture please!</figcaption>
+             {{/if}}
+            
+            </figure>
+            <input class="align-center" type="hidden" role="uploadcare-uploader" data-image-shrink="1024x1024 70%" />
+            
+       </div>
+         <div id="user-info" class="col text-right">
+             <p class="lead text-primary"><span><strong  id="first-name">{{user.first_name}}</strong></span> <span><strong id="last-name">{{user.last_name}}</strong></span></p>
+             <p class="lead"><strong>email: </strong><span id="email">{{user.email}}</span></p>
+             <p class="lead"><strong>Phone number: </strong><span id="phone">{{user.phone}}</span></p>
+             <p class="lead"><strong>Zipcode: </strong><span id="zipcode">{{user.zipcode}}</span></p>
+         </div>
+         <div class="col">
+             <button id="editProfile" type="button" class="d-block btn btn-primary btn-outline-light">Edit my profile</button>
+              <button id="deleteAccount" type="button" class="d-block mt-3 btn btn-danger btn-outline-light">Delete account</button>
+         </div>
+         <hr class="my-4">
+         <p>What do you want to do today?.</p>
+         <p class="lead">
+        {{#if user.petSitter}}
+        <a class="btn btn-primary btn-lg" href="#" role="button">See my Pet Sitter Profile</a>
+        {{else}}
+        <a class="btn btn-primary btn-lg" href="sitterSignup" role="button">Create my Pet Sitter Profile</a>
+        {{/if}}
+        {{#if user.petOwner}}
+        <a class="btn btn-primary btn-lg" href="#" role="button">See my Pet Owner Profile</a>
+        {{else}}
+        <a class="btn btn-primary btn-lg" href="ownerSignup" role="button">Create my Pet Owner Profile</a>
+        {{/if}}
+    
+         </p>
+   </div>
+</div>
+</section>
+<script>
+  UPLOADCARE_PUBLIC_KEY = '59150aeae4413033069f';
+  UPLOADCARE_EFFECTS = 'crop,rotate,mirror,flip,enhance,sharp,blur,grayscale,invert';
+  UPLOADCARE_IMAGE_SHRINK = '1024x1024 70%';
+  UPLOADCARE_PREVIEW_STEP = true;
+  UPLOADCARE_CLEARABLE = true;
+  UPLOADCARE_LOCALE = 'en';
+  UPLOADCARE_LIVE = false;
+</script>
+<script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js" charset="utf-8"></script>
+<script src="https://ucarecdn.com/libs/widget-tab-effects/1.x/uploadcare.tab-effects.js"></script>
+<script>
+  uploadcare.registerTab('preview', uploadcareTabEffects)
+</script>
+<script src="/javascript/pictureUpload.js"></script>
+<script src="/javascript/userProfile.js"></script>

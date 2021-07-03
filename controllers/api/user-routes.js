@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Pet_Owner, Pet_Sitter } = require('../../models');
 const User_picture = require('../../models/User_picture');
 
 // get all users
@@ -99,7 +99,17 @@ router.post('/login', (req, res) => {
   User.findOne({
     where: {
       email: req.body.email
-    }
+    },
+    include: [
+      {
+        model: Pet_Owner,
+        attributes: ['id']
+      },
+      {
+        model: Pet_Sitter,
+        attributes: ['id']
+      }
+    ]
   }).then(dbUserData => {
     if (!dbUserData) {
       res.status(400).json({ message: 'No user with that email address!' });
