@@ -1,51 +1,53 @@
 <div class="container">
     <section>
-        <form class="addpet-form mt-3">
+        {{#with pet}}
+        <form class="editpet-form mt-3">
             <h4>ADD NEW PET</h4>
             <div class="form-group">
                 <label for="name-pet">Pets Name</label>
-                <input type="text" class="form-control" id="name-pet" placeholder="Enter Pets Name">
+                <input type="text" class="form-control" id="name-pet" value={{pet_name}}>
             </div>
             <div class="form-group">
                 <label for="age-pet">Age</label>
-                <input type="text" class="form-control" id="age-pet" placeholder="Enter Age">
+                <input type="text" class="form-control" id="age-pet" value={{age}}>
             </div>
             <div class="form-group">
                 <label for="species-pet">Species</label>
-                <input type="text" class="form-control" id="species-pet" placeholder="Enter Species">
+                <input type="text" class="form-control" id="species-pet" value={{species}}>
             </div>
             <div class="form-group">
                 <label for="breed-pet">Breed</label>
-                <input type="text" class="form-control" id="breed-pet" placeholder="Enter Pet Skills">
+                <input type="text" class="form-control" id="breed-pet" value={{breed}}>
             </div>
             <div class="form-group">
                 <label for="bio-pet">Bio</label>
-                <input type="text" class="form-control" id="bio-pet" placeholder="Enter Bio">
+                <input type="text" class="form-control" id="bio-pet" value={{bio}}>
             </div>
             <div class="form-group">
                 <label for="feeding-pet">Feeding Habits</label>
-                <input type="text" class="form-control" id="feeding-pet" placeholder="Enter Feeding Habits">
+                <input type="text" class="form-control" id="feeding-pet" value={{feeding_habits}}>
             </div>
             <div class="form-group">
                 Gender:
-                <input type="radio" name="gender" value="Male">Male
-                <input type="radio" name="gender" value="Female">Female
+                <input type="radio" name="gender" value="Male" {{#unless gender}} checked {{/unless}}>Male
+                <input type="radio" name="gender" value="Female" {{#if gender}} checked {{/if}}>Female
             </div>
             <div class="form-group">
                 <label for="interactive-pet">Interactive </label>
-                <input type="checkbox" id="interactive-pet" value="true">
+                <input type="checkbox" id="interactive-pet" value="true" {{#if interactive}} checked {{/if}}>
             </div>
             <div class="form-group">
                 <label for="meutered-pet">Neutered</label>
-                <input type="checkbox" id="meutered-pet" value="true">
+                <input type="checkbox" id="meutered-pet" value="true" {{#if neutered_spayed}} checked {{/if}}>
             </div>
             <div class="form-group">
                 <label for="pottyTrained-pet">Potty Trained</label>
-                <input type="checkbox" id="pottyTrained-pet" value="true">
+                <input type="checkbox" id="pottyTrained-pet" value="true" {{#if potty_trained}} checked {{/if}}>
             </div>
             <button type="submit" class="btn btn-info btn-lg btn-block btn-signup">Submit</button>
         </form>
+        {{/with}}
     </section>
 </div>
 
-<script src="/javascript/addpet.js"></script>
+<script src="/javascript/editpet.js"></script>

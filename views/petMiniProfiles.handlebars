@@ -9,13 +9,11 @@
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Animal: {{pet.species}}</li>
-      <li class="list-group-item">Gender: {{pet.gender}}</li>
+        <li class="list-group-item">Gender: {{#if pet.gender}}Female{{else}}Male{{/if}}</li>
       <li class="list-group-item">Age: {{pet.age}}</li>
     </ul>
    <a href="/petProfiles/pets/{{id}}" class="btn btn-primary">View Profile</a>
+
   </div>
- </div> 
- {{/each}}
+  {{/each}}
 </section>
-
-

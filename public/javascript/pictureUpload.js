@@ -1,14 +1,15 @@
 
-
-
 const widget = uploadcare.SingleWidget("[role=uploadcare-uploader]");
 widget.onUploadComplete(fileInfo => {
   // get a CDN URL from the file info
-  let img = document.querySelector('img');
+  let img = document.querySelector("img");
+  console.log(img);
   const pic_url = fileInfo.cdnUrl;
+  console.log(pic_url);
   const id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
   ];
+  console.log(id);
   const body = {
       picture_url: pic_url,
       user_id: id
