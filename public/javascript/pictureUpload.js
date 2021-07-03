@@ -14,7 +14,7 @@ widget.onUploadComplete(fileInfo => {
       picture_url: pic_url,
       user_id: id
   }
-
+  console.log(body);
   //update the url link in the database
  const postPicture = (body,img) => fetch('/api/userPicture', {
     method: 'POST',
@@ -30,7 +30,7 @@ widget.onUploadComplete(fileInfo => {
     console.log('Error: ' + response.statusText);
   })
   .then(postResponse => {
-    console.log(postResponse.message);
+    console.log(postResponse);
     console.log(`Picture added with success`);
   });
 

@@ -17,10 +17,10 @@
             
        </div>
          <div id="user-info" class="col text-right">
-             <p class="lead text-primary"><strong>{{user.first_name}} {{user.last_name}}</strong></p>
-             <p class="lead"><strong>email:</strong> {{user.email}}</p>
-             <p class="lead"><strong>Phone number:</strong> {{user.phone}}</p>
-             <p class="lead"><strong>Zipcode:</strong> {{user.zipcode}}</p>
+             <p class="lead text-primary"><span><strong  id="first-name">{{user.first_name}}</strong></span> <span><strong id="last-name">{{user.last_name}}</strong></span></p>
+             <p class="lead"><strong>email: </strong><span id="email">{{user.email}}</span></p>
+             <p class="lead"><strong>Phone number: </strong><span id="phone">{{user.phone}}</span></p>
+             <p class="lead"><strong>Zipcode: </strong><span id="zipcode">{{user.zipcode}}</span></p>
          </div>
          <div class="col">
              <button id="editProfile" type="button" class="d-block btn btn-primary btn-outline-light">Edit my profile</button>
