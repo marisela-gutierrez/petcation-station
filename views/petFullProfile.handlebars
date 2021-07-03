@@ -1,0 +1,32 @@
+<section class="pet-card row ">
+  <h1 class="fs-1">About Me <i class="fas fa-paw"></i></i> </h1>
+
+  <div class="col-sm-6 mb-5">
+    <div class="card" style="width: 30rem;">
+    <img src="https://ucarecdn.com/60ac9bb2-cc23-4052-b03b-2686a9578cb3/mypet.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title text-center">{{pet.pet_name}}</h5>
+    </div>
+    <ul class="list-group list-group-flush fs-5">
+      <li class="list-group-item"><i class="fas fa-dollar-sign"></i> Age: {{pet.age}}</li>
+      <li class="list-group-item"><i class="far fa-calendar-alt"></i> Species: {{pet.species}}</li>
+      <li class="list-group-item"><i class="fas fa-address-card"></i> Bio: {{pet.bio}}</li>
+      <li class="list-group-item"><i class="fas fa-users"></i> Breed: {{pet.breed}}</li>
+      <li class="list-group-item"><i class="fas fa-envelope-open-text"></i> Gender: {{pet.gender}}</li>
+      <li class="list-group-item"><i class="fas fa-home"></i> Interactive: {{pet.interactive}}</li>
+      <li class="list-group-item"><i class="far fa-lightbulb"></i> Feeding habits: {{pet.feeding_habits}}</li>
+      <li class="list-group-item">Neutered/Spayed: {{pet.neutered_spayed}}</li>
+      <li class="list-group-item">Potty Trained: {{pet.potty_trained}}</li>
+    </ul>
+  </div>
+ </div> 
+
+  <div class="card col-sm-6" style="width: 18rem; height: 20rem;">
+  <h5 class="card-title text-center mt-3">Owner info:</h5>
+  <ul class="list-group list-group-flush mt-5">
+    <li class="list-group-item"><i class="fas fa-user"></i> Name: {{pet.petOwner.user.first_name}} {{pet.petOwner.user.last_name}}</li>
+    <li class="list-group-item"><i class="far fa-envelope"></i> Email: {{pet.petOwner.user.email}}</li>
+    <li class="list-group-item"><i class="fas fa-phone"></i> Phone: {{pet.petOwner.user.phone}}</li>
+  </ul>
+</div>
+</section>
