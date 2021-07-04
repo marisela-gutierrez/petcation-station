@@ -32,7 +32,7 @@ router.get('/', (req, res) => {
         .then(dbPets => {
             // pass a single pet object into the homepage template
             const pets = dbPets.map(pet => pet.get({ plain: true }));
-            res.render('petMiniProfiles', { pets, loggedIn: req.session.loggedIn });
+            res.render('petMiniProfiles', { pets});
         })
         .catch(err => {
             console.log(err);
@@ -80,10 +80,7 @@ router.get('/pets/:id', (req, res) => {
             const pet = dbPets.get({ plain: true });
 
             // pass data to template
-            res.render('petFullProfile', {
-                pet,
-                loggedIn: req.session.loggedIn
-            });
+            res.render('petFullProfile', {pet});
         })
         .catch(err => {
             console.log(err);
