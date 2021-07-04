@@ -9,6 +9,7 @@ router.get('/', petOwnerAuth, (req, res) => {
             owner_id: req.session.petOwnerId
         },
         attributes: [
+            'id',
             'pet_name',
             'species',
             'gender',
@@ -17,8 +18,7 @@ router.get('/', petOwnerAuth, (req, res) => {
     })
         .then(dbPetData => {
             const pet = dbPetData.map(post => post.get({ plain: true }));
-            console.log(req.session);
-            res.render('pet-dashboard', { pet });
+            res.render('pet-dashboard', { pet, loggedIn: req.session.loggedIn });
         })
         .catch(err => {
             console.log(err);

@@ -1,0 +1,19 @@
+<section class="pet-card row ">
+  <h1>Sitters to care for your pets <i class="far fa-heart"></i> </h1>
+  {{#each sitters as |sitter|}}
+  <div class=" col-sm-3 mb-5 ">
+    <div class="card card border-primary" style="width: 18rem;">
+      <img src='{{user.userPicture.picture_url}}' class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title text-center">{{user.first_name}} {{user.last_name}}</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Price Per Day: $ {{sitter.price_per_day}}</li>
+        <li class="list-group-item">Availability: {{sitter.availability}}</li>
+        <li class="list-group-item">Pet Skills: {{sitter.pet_skills}}</li>
+      </ul>
+      <a href="/sitterProfiles/petSitters/{{id}}" class="btn btn-primary">View Profile</a>
+    </div>
+  </div>
+  {{/each}}
+</section>

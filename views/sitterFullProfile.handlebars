@@ -1,0 +1,31 @@
+<section class="pet-card row ">
+  <h1 class="fs-1">About Me <i class="fas fa-paw"></i></i> </h1>
+
+  <div class="col-sm-6 mb-5">
+    <div class="card card border-primary" style="width: 30rem;">
+    <img src={{sitter.user.userPicture.picture_url}} class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title text-center">{{sitter.user.first_name}} {{sitter.user.last_name}}</h5>
+    </div>
+    <ul class="list-group list-group-flush fs-5">
+      <li class="list-group-item"><i class="fas fa-dollar-sign"></i> Price Per Day: $ {{sitter.price_per_day}}</li>
+      <li class="list-group-item"><i class="far fa-calendar-alt"></i> Availability: {{sitter.availability}}</li>
+      <li class="list-group-item"><i class="fas fa-address-card"></i> Bio: {{sitter.bio}}</li>
+      <li class="list-group-item"><i class="fas fa-envelope-open-text"></i> Preferred Contact: {{sitter.contact}}</li>
+      <li class="list-group-item"><i class="fas fa-home"></i> Hosting Preference: {{sitter.hosting_preference}}</li>
+      <li class="list-group-item"><i class="far fa-lightbulb"></i> Pet Skills: {{sitter.pet_skills}}</li>
+      <li class="list-group-item">Neutering {{sitter.neutering}}</li>
+    </ul>
+  </div>
+ </div> 
+
+ <div class="card card border-primary col-sm-6" style="width: 18rem; height: 20rem;">
+  <h5 class="card-title text-center mt-3">Contact Me</h5>
+  <ul class="list-group list-group-flush mt-5">
+    <li class="list-group-item"><i class="far fa-envelope"></i> Email: {{sitter.user.email}}</li>
+    <li class="list-group-item"><i class="fas fa-phone"></i> Phone: {{sitter.user.phone}}</li>
+    <li class="list-group-item"><i class="fas fa-users"></i> Social Media: {{sitter.social}}</li>
+  </ul>
+</div>
+ 
+</section>
