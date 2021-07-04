@@ -18,7 +18,7 @@ router.get('/', petOwnerAuth, (req, res) => {
     })
         .then(dbPetData => {
             const pet = dbPetData.map(post => post.get({ plain: true }));
-            res.render('pet-dashboard', { pet });
+            res.render('pet-dashboard', { pet, loggedIn: req.session.loggedIn });
         })
         .catch(err => {
             console.log(err);

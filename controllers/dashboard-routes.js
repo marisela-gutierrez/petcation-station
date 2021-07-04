@@ -5,7 +5,7 @@ const { withAuth, petOwnerAuth } = require('../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
   console.log(req.session);
-  res.render('dashboard', {loggedIn: true, user_id: req.session.user_id});
+  res.render('dashboard', { loggedIn: req.session.loggedIn, user_id: req.session.user_id });
 });
 
 
