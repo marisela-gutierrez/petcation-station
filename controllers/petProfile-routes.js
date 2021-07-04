@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Pets, Pet_Owner, User } = require('../../models');
+const { Pets, Pet_Owner, User } = require('../models');
 
 router.get('/', (req, res) => {
     Pets.findAll({
@@ -29,14 +29,18 @@ router.get('/', (req, res) => {
             }
         ]
     })
-        .then(dbPets => res.json(dbPets))
+        .then(dbPets => {
+            // pass a single pet object into the homepage template
+            const pets = dbPets.map(pet => pet.get({ plain: true }));
+            res.render('petMiniProfiles', { pets });
+        })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         })
 });
 
-router.get('/:id', (req, res) => {
+router.get('/pets/:id', (req, res) => {
     Pets.findOne({
         where: {
             id: req.params.id
@@ -72,7 +76,14 @@ router.get('/:id', (req, res) => {
                 res.status(404).json({ message: 'No Pet found with this id' });
                 return;
             }
-            res.json(dbPets);
+            // serialize the data
+            const pet = dbPets.get({ plain: true });
+
+            // pass data to template
+            res.render('petFullProfile', {
+                pet,
+                loggedIn: req.session.loggedIn
+            });
         })
         .catch(err => {
             console.log(err);
@@ -80,63 +91,6 @@ router.get('/:id', (req, res) => {
         });
 });
 
-router.post('/', (req, res) => {
-    Pets.create({
-        pet_name: req.body.pet_name,
-        age: req.body.age,
-        species: req.body.species,
-        bio: req.body.bio,
-        breed: req.body.breed,
-        gender: req.body.gender,
-        interactive: req.body.interactive,
-        feeding_habits: req.body.feeding_habits,
-        neutered_spayed: req.body.neutered_spayed,
-        potty_trained: req.body.potty_trained,
-        owner_id: req.session.petOwnerId
-    })
-        .then(dbPets => res.json(dbPets))
-        .catch(err => {
-            console.log(err);
-            res.status(400).json(err);
-        });
-});
 
-router.put('/:id', (req, res) => {
-    Pets.update(req.body, {
-        where: {
-            id: req.params.id
-        }
-    })
-        .then(dbPets => {
-            if (!dbPets[0]) {
-                res.status(404).json({ message: 'No Pet found with this id' });
-                return;
-            }
-            res.json(dbPets);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
-
-router.delete('/:id', (req, res) => {
-    Pets.destroy({
-        where: {
-            id: req.params.id
-        }
-    })
-        .then(dbPets => {
-            if (!dbPets) {
-                res.status(404).json({ message: 'No Pet found with this id' });
-                return;
-            }
-            res.json(dbPets);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
 
 module.exports = router;

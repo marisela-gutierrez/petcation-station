@@ -1,0 +1,45 @@
+<section class="pet-card row ">
+  <h1 class="fs-1">About Me <i class="fas fa-paw"></i></i> </h1>
+
+  <div class="col-sm-6 mb-5">
+    <div class="card card border-primary" style="width: 30rem;">
+    <img src="https://ucarecdn.com/60ac9bb2-cc23-4052-b03b-2686a9578cb3/mypet.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title text-center">{{pet.pet_name}}</h5>
+    </div>
+    <ul class="list-group list-group-flush fs-5">
+      <li class="list-group-item"><i class="fas fa-birthday-cake"></i> Age: {{pet.age}}</li>
+      <li class="list-group-item"><i class="fas fa-paw"></i>Species: {{pet.species}}</li>
+      <li class="list-group-item"><i class="fas fa-address-card"></i> Bio: {{pet.bio}}</li>
+      <li class="list-group-item"><i class="fas fa-paw"></i> Breed: {{pet.breed}}</li>
+      <li class="list-group-item"><i class="fas fa-venus-mars"></i></i> Gender: {{pet.gender}}</li>
+      <li class="list-group-item"><i class="fas fa-home"></i> Interactive With Other Pets: {{pet.interactive}}</li>
+      <li class="list-group-item"><i class="fas fa-utensils"></i> Feeding habits: {{pet.feeding_habits}}</li>
+      <li class="list-group-item">Neutered/Spayed: {{pet.neutered_spayed}}</li>
+      <li class="list-group-item">Potty Trained: {{pet.potty_trained}}</li>
+    </ul>
+  </div>
+ </div> 
+
+
+<div class="col-sm-6 mb-5">
+  <div class="card card border-primary mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="https://ucarecdn.com/60ac9bb2-cc23-4052-b03b-2686a9578cb3/mypet.jpg" class="img-fluid rounded-start" alt="...">
+      </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title text-center">Owner Info</h5>
+        <ul class="list-group list-group-flush mt-5">
+          <li class="list-group-item"><i class="fas fa-user"></i> Name: {{pet.petOwner.user.first_name}} {{pet.petOwner.user.last_name}}</li>
+          <li class="list-group-item"><i class="far fa-envelope"></i> Email: {{pet.petOwner.user.email}}</li>
+          <li class="list-group-item"><i class="fas fa-phone"></i> Phone: {{pet.petOwner.user.phone}}</li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </div>
+</div> 
+ 
+</section>
