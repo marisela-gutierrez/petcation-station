@@ -3,6 +3,7 @@ const { Pets, Pet_Owner, Pet_Sitter, User} = require('../models');
 const User_picture = require('../models/User_picture');
 
 router.get('/:id', (req, res) => {
+    if(req.session){
     User.findOne({
       attributes: { exclude: ['password'] },
       where: {
@@ -66,6 +67,7 @@ router.get('/:id', (req, res) => {
           console.log(err);
           res.status(500).json(err);
       });
+    }
   });
 
   module.exports = router;
