@@ -28,7 +28,7 @@ router.get('/:id', petOwnerAuth, (req, res) => {
                 return;
             }
             const pet = dbPets.get({ plain: true });
-            res.render('editpet', { pet, loggedIn: true });
+            res.render('/editpet', { pet, loggedIn: req.session.loggedIn });
         })
         .catch(err => {
             console.log(err);
