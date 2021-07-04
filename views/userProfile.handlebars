@@ -1,5 +1,5 @@
-<section class="motto">
 
+<section class="motto">
  <div class="jumbotron bg-light rounded text-dark p-4">
    <div class="row">
        <div class="col-3">
@@ -30,19 +30,20 @@
          <p>What do you want to do today?.</p>
          <p class="lead">
         {{#if user.petSitter}}
-        <a class="btn btn-primary btn-lg" href="#" role="button">See my Pet Sitter Profile</a>
+        <a class="btn btn-primary btn-lg" href="/sitterProfiles/petSitters/{{user.petSitter.id}}" role="button">See my Pet Sitter Profile</a>
         {{else}}
-        <a class="btn btn-primary btn-lg" href="sitterSignup" role="button">Create my Pet Sitter Profile</a>
+        <a class="btn btn-primary btn-lg" href="/sitterSignup" role="button">Create my Pet Sitter Profile</a>
         {{/if}}
         {{#if user.petOwner}}
-        <a class="btn btn-primary btn-lg" href="#" role="button">See my Pet Owner Profile</a>
+        <a class="btn btn-primary btn-lg" href="/ownerProfiles/owners/{{user.owner.id}}" role="button">See my Pet Owner Profile</a>
         {{else}}
-        <a class="btn btn-primary btn-lg" href="ownerSignup" role="button">Create my Pet Owner Profile</a>
+        <a class="btn btn-primary btn-lg" href="/ownerSignup" role="button">Create my Pet Owner Profile</a>
         {{/if}}
     
          </p>
    </div>
 </div>
+
 </section>
 <script>
   UPLOADCARE_PUBLIC_KEY = '59150aeae4413033069f';

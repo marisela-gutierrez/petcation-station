@@ -58,7 +58,13 @@ router.get('/petSitters/:id', (req, res) => {
         include: [
             {
                 model: User,
-                attributes: ['first_name', 'last_name', 'email', 'phone']
+                attributes: ['first_name', 'last_name', 'email', 'phone'],
+                include: [
+                    {
+                        model: User_picture,
+                        attributes: ['picture_url']
+                    }
+                ]
             }
         ]
     })

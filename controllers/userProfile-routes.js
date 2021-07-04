@@ -60,7 +60,7 @@ router.get('/:id', (req, res) => {
         // pass a single pet object into the homepage template
         const user = dbUser.get({ plain: true });
         console.log(user);
-        res.render('userProfile', { user, loggedIn: req.session.loggedIn });
+        res.render('userProfile', { user});
     })
         .catch(err => {
             console.log(err);
