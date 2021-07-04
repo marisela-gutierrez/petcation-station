@@ -4,7 +4,7 @@ const { withAuth, petOwnerAuth } = require('../utils/auth')
 const { Pets, Pet_Owner, User } = require('../models');
 
 
-router.get('/:id', petOwnerAuth, (req, res) => {
+router.get('/:id', (req, res) => {
     Pets.findOne({
         where: {
             id: req.params.id
