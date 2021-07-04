@@ -4,7 +4,8 @@
     </div>
     <div class="container">
         <div class="row">
-            {{#each pet}} <div class=" col-sm-3 m-5 row">
+            {{#each pet}}
+            <div class=" col-sm-3 m-5 row">
                 <div class="card" style="width: 18rem;">
                     <img src="https://ucarecdn.com/60ac9bb2-cc23-4052-b03b-2686a9578cb3/mypet.jpg" class="card-img-top"
                         alt="...">
@@ -13,12 +14,18 @@
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Animal: {{species}}</li>
-                        <li class="list-group-item">Gender: {{gender}}</li>
+                        <li class="list-group-item">Gender: {{#if gender}}Female{{else}}Male{{/if}}</li>
                         <li class="list-group-item">Age: {{age}}</li>
                     </ul>
                     <a href="#" class="btn btn-primary">View Profile</a>
-                    <button id="editPet" type="button" class="btn btn-primary btn-outline-light">Edit Pet</button>
-                    <button id="deletePet" type="button" class="btn btn-danger btn-outline-light">Remove Pet</button>
+                    <button id="editPet" type="button" class="btn btn-primary btn-outline-light"
+                        onclick="editPetHandler({{id}})">
+                        Edit Pet
+                    </button>
+                    <button id="deletePet" type="button" class="btn btn-danger btn-outline-light"
+                        onclick="deletePetHandler({{id}})">
+                        Remove Pet
+                    </button>
                 </div>
             </div>
             {{/each}}
