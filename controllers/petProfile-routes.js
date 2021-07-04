@@ -32,7 +32,7 @@ router.get('/', (req, res) => {
         .then(dbPets => {
             // pass a single pet object into the homepage template
             const pets = dbPets.map(pet => pet.get({ plain: true }));
-            res.render('petMiniProfiles', { pets});
+            res.render('petMiniProfiles', {pets});
         })
         .catch(err => {
             console.log(err);
@@ -65,7 +65,7 @@ router.get('/pets/:id', (req, res) => {
                 include: [
                     {
                         model: User,
-                        attributes: ['first_name', 'last_name', 'email', 'phone', 'profile_pic']
+                        attributes: ['first_name', 'last_name', 'email', 'phone']
                     }
                 ]
             }
